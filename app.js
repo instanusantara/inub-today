@@ -1,4 +1,4 @@
-const API_BASE="https://REPLACE-WITH-YOUR-WORKER.workers.dev";
+const API_BASE="https://inub-api.instanusantara-creative-2db.workers.dev";
 let todayData=null;
 async function loadToday(){const r=await fetch(API_BASE+"/api/today");if(!r.ok)throw new Error("API error");todayData=await r.json();
 document.getElementById("code").textContent=todayData.code;
