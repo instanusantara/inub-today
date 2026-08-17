@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>INUB History</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="wrap"><h1>INUB History</h1><section class="card">
+<table><thead><tr><th>Tanggal</th><th>Kode</th><th>Hashtag</th><th>Status</th></tr></thead>
+<tbody id="rows"><tr><td colspan="4">Memuat...</td></tr></tbody></table></section>
+<a href="./index.html">← Kembali</a></main><script src="app.js"></script><script>
+(async()=>{const r=await fetch(API_BASE+'/api/history?limit=100');const data=await r.json();
+rows.innerHTML=data.map(x=>`<tr><td>${x.active_date||'-'}</td><td><b>${x.code}</b></td><td>${x.hashtag}</td><td>${x.status}</td></tr>`).join('');})();
+</script></body></html>
